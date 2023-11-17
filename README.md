@@ -1,3 +1,7 @@
+# Travel Guide to Japan
+
+Access the website [here](https://snazzy-semifreddo-bf9756.netlify.app/) to see the application in action!
+
 ## Description
 
 The **Travel Guide to Japan** is a web application built using technologies such as Gatsby, React, TailwindCSS, and Google Maps Embed API. It aims to offer users a rich and informative experience while exploring Japan's cultural and scenic diversity.
