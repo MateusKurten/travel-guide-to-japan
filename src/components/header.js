@@ -10,9 +10,9 @@ export default function Header(props) {
       </div>
       <div className="w-full flex-grow flex items-center w-auto">
         <div className="text-sm flex-grow mt-2">
-        <Link to="/" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-lg">Home</Link>
-        <Link to="/places" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-lg">Places</Link>
-        <Link to="/kanjis" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-lg">Helpful Kanji</Link>
+        <Link to="/" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-sm md:text-lg">Home</Link>
+        <Link to="/places" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-sm md:text-lg">Places</Link>
+        <Link to="/kanjis" className="inline-block mt-0 text-pink-400 hover:text-white mr-4 text-sm md:text-lg">Helpful Kanji</Link>
         </div>
       </div>
     </nav>
