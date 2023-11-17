@@ -37,7 +37,7 @@ const PlacePost = ({ data, children }) => {
             loading="lazy"
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
-            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}
+            src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GATSBY_MAPS_API_KEY}
               &q=${title.replace(/\s+/g, '+')},${city.replace(/\s+/g, '+')}+Japan`}>
           </iframe>
           <div className="flex items-center mt-4">
