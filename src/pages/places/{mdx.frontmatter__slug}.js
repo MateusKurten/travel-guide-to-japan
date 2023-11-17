@@ -4,9 +4,11 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import "./places.css"
 
-const BlogPost = ({ data, children }) => {
+const PlacePost = ({ data, children }) => {
 
-  const image = getImage(data.mdx.frontmatter.hero_image)
+  const image = getImage(data.mdx.frontmatter.hero_image);
+  const city = data.mdx.frontmatter.city == null ? '' : data.mdx.frontmatter.city;
+  const title = data.mdx.frontmatter.title == null ? '' : data.mdx.frontmatter.title;
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
@@ -36,7 +38,7 @@ const BlogPost = ({ data, children }) => {
             allowFullScreen
             referrerPolicy="no-referrer-when-downgrade"
             src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_API_KEY}
-              &q=${data.mdx.frontmatter.title.replace(/\s+/g, '+')},${data.mdx.frontmatter.city.replace(/\s+/g, '+')}+Japan`}>
+              &q=${title.replace(/\s+/g, '+')},${city.replace(/\s+/g, '+')}+Japan`}>
           </iframe>
           <div className="flex items-center mt-4">
             <div className="text-sm">
@@ -73,4 +75,4 @@ export const query = graphql`
 
 export const Head = ({ data }) => <title>{data.mdx.frontmatter.title}</title>
 
-export default BlogPost
+export default PlacePost

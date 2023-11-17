@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 
-const BlogPost = ({ data, children }) => {
+const KanjiPost = ({ data, children }) => {
 
   const image = getImage(data.mdx.frontmatter.image)
 
@@ -48,4 +48,4 @@ export const query = graphql`
 
 export const Head = ({ data }) => <title>{data.mdx.frontmatter.title}</title>
 
-export default BlogPost
+export default KanjiPost
