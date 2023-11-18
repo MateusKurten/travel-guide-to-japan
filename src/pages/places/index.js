@@ -74,6 +74,7 @@ const PlacesPage = () => {
         previousClassName={"font-bold text-3xl text-pink-400"}
         onPageChange={handlePageChange}
         pageCount={totalPages}
+        forcePage={currentPage}
       />
       <div className="flex flex-col sm:flex-row">
         {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl py-2 mb-3 text-pink-400 w-full block sm:hidden">Previous page</button>)}
