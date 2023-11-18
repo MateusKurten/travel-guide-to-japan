@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Layout from '../../components/layout'
 
-const BlogPage = () => {
+const KanjiPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -41,6 +41,6 @@ const BlogPage = () => {
   )
 }
 
-export const Head = () => <title>Posts</title>
+export const Head = () => <title>Kanjis</title>
 
-export default BlogPage
+export default KanjiPage

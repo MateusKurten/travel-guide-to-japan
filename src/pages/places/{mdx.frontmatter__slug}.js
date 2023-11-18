@@ -13,15 +13,15 @@ const PlacePost = ({ data, children }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <div className="flex justify-center">
-      <div className=" w-5/6 sm:flex sm:flex-row-reverse sm:justify-center">
-        <div className="h-56 sm:h-auto sm:w-3/5 flex-none bg-cover overflow-hidden">
+      <div className=" w-5/6 lg:flex lg:flex-row-reverse lg:justify-center">
+        <div className="h-56 lg:h-auto lg:w-3/5 flex-none bg-cover overflow-hidden">
           <GatsbyImage
             image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
             className="h-full"
           />
         </div>
-        <div className="border border-gray-400 sm:border-t sm:border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal sm:flex-col">
+        <div className="border border-gray-400 lg:border-t lg:border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal">
           <div className="mb-8">
             <span className="text-sm text-gray-600 flex items-center">
               <img className="inline mr-1" src={'/location-pin.svg'} alt="City"/>

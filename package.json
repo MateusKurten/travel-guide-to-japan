@@ -23,7 +23,8 @@
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-paginate": "^8.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

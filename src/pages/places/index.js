@@ -1,9 +1,11 @@
 import * as React from 'react'
+import { useState } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
+import ReactPaginate from "react-paginate"
 
-const BlogPage = () => {
+const PlacesPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
@@ -36,12 +38,50 @@ const BlogPage = () => {
     }
   `)
 
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(data.allMdx.nodes.length / itemsPerPage);
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = data.allMdx.nodes.slice(startIndex, endIndex);
+
+  const handlePageChange = ({ selected: page }) => {
+    setCurrentPage(page);
+  }
+  
+  const handlePreviousPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    console.log(totalPages);
+    if (currentPage < totalPages - 1) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <Layout>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 justify-center">
-        {
-          data.allMdx.nodes.map(node => (
-            <article key={node.id} className="hover:shadow-xl">
+      <ReactPaginate
+        containerClassName='flex justify-center items-center mb-8'
+        activeClassName={"p-2 bg-pink-100"}
+        pageClassName={"mx-2 text-4xl text-pink-300"}
+        nextLabel={">"}
+        nextClassName={"font-bold text-3xl text-pink-400"}
+        previousLabel={"<"}
+        previousClassName={"font-bold text-3xl text-pink-400"}
+        onPageChange={handlePageChange}
+        pageCount={totalPages}
+      />
+      <div className="flex flex-col lg:flex-row">
+        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl py-2 mb-3 text-pink-400 w-full block lg:hidden">Previous page</button>)}
+        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-6xl text-pink-400 mr-6 hidden lg:block">&lt;</button>)}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center md:mx-20 lg:mx-0">
+          {
+            currentItems.map(node => (
+              <article key={node.id} className="hover:shadow-xl">
                 <Link to={node.frontmatter.slug}>
                   <div className="lg:min-h-full rounded overflow-hidden shadow-lg">
                     <GatsbyImage
@@ -59,14 +99,17 @@ const BlogPage = () => {
                     </div>
                   </div>
                 </Link>
-            </article>
-          ))
-        }
+              </article>
+            ))
+          }
+        </div>
+        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-6xl text-pink-400 ml-6 hidden lg:block">&gt;</button>)}
+        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-3xl py-2 mt-3 text-pink-400 w-full block lg:hidden">Next page</button>)}
       </div>
     </Layout>
   )
 }
 
-export const Head = () => <title>Posts</title>
+export const Head = () => <title>Places</title>
 
-export default BlogPage
+export default PlacesPage
