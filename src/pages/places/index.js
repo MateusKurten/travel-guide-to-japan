@@ -75,10 +75,10 @@ const PlacesPage = () => {
         onPageChange={handlePageChange}
         pageCount={totalPages}
       />
-      <div className="flex flex-col lg:flex-row">
-        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl py-2 mb-3 text-pink-400 w-full block lg:hidden">Previous page</button>)}
-        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-6xl text-pink-400 mr-6 hidden lg:block">&lt;</button>)}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 justify-center md:mx-20 lg:mx-0">
+      <div className="flex flex-col sm:flex-row">
+        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl py-2 mb-3 text-pink-400 w-full block sm:hidden">Previous page</button>)}
+        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-6xl text-pink-400 mr-6 hidden sm:block">&lt;</button>)}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center">
           {
             currentItems.map(node => (
               <article key={node.id} className="hover:shadow-xl">
@@ -103,8 +103,8 @@ const PlacesPage = () => {
             ))
           }
         </div>
-        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-6xl text-pink-400 ml-6 hidden lg:block">&gt;</button>)}
-        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-3xl py-2 mt-3 text-pink-400 w-full block lg:hidden">Next page</button>)}
+        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-6xl text-pink-400 ml-6 mr-4 hidden sm:block">&gt;</button>)}
+        {currentPage !== totalPages - 1 && (<button onClick={handleNextPage} className="text-3xl py-2 mt-3 text-pink-400 w-full block sm:hidden">Next page</button>)}
       </div>
     </Layout>
   )

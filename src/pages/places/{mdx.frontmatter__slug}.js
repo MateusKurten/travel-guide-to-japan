@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../../components/layout'
 import "./places.css"
@@ -12,16 +12,17 @@ const PlacePost = ({ data, children }) => {
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
+      <Link to="/places" className="text-white rounded bg-pink-300 py-1 px-2 text-lg mb-2 inline-block">&#8678; Back</Link>
       <div className="flex justify-center">
-      <div className=" w-5/6 lg:flex lg:flex-row-reverse lg:justify-center">
+      <div className=" w-5/6 lg:flex lg:flex-row-reverse lg:justify-center border shadow-xl">
         <div className="h-56 lg:h-auto lg:w-3/5 flex-none bg-cover overflow-hidden">
           <GatsbyImage
             image={image}
             alt={data.mdx.frontmatter.hero_image_alt}
-            className="h-full"
+            className="h-full "
           />
         </div>
-        <div className="border border-gray-400 lg:border-t lg:border-gray-400 bg-white p-4 flex flex-col justify-between leading-normal">
+        <div className="bg-white p-6 flex flex-col justify-between leading-normal lg:border-r">
           <div className="mb-8">
             <span className="text-sm text-gray-600 flex items-center">
               <img className="inline mr-1" src={'/location-pin.svg'} alt="City"/>
