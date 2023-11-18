@@ -1,6 +1,6 @@
 # Travel Guide to Japan
 
-Access the website [here](https://snazzy-semifreddo-bf9756.netlify.app/) to see the application in action!
+Access the website [here](https://travelguidetojapan.netlify.app/) to see the application in action!
 
 ## Description
 
