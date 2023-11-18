@@ -65,7 +65,7 @@ const PlacesPage = () => {
   return (
     <Layout>
       <ReactPaginate
-        containerClassName='flex justify-center items-center mb-8'
+        containerClassName='flex justify-center items-center mb-4 sm:mb-8'
         activeClassName={"p-2 bg-pink-100"}
         pageClassName={"mx-2 text-4xl text-pink-300"}
         nextLabel={">"}
@@ -77,7 +77,7 @@ const PlacesPage = () => {
         forcePage={currentPage}
       />
       <div className="flex flex-col sm:flex-row">
-        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl py-2 mb-3 text-pink-400 w-full block sm:hidden">Previous page</button>)}
+        {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-3xl pb-2 mb-3 text-pink-400 w-full block sm:hidden">Previous page</button>)}
         {currentPage !== 0 && (<button onClick={handlePreviousPage} className="text-6xl text-pink-400 mr-6 hidden sm:block">&lt;</button>)}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 justify-center">
           {
