@@ -11,7 +11,7 @@ const PlacePost = ({ data, children }) => {
   const title = data.mdx.frontmatter.title == null ? '' : data.mdx.frontmatter.title;
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout>
       <Link to="/places" className="text-white rounded bg-pink-300 py-1 px-2 text-lg mb-2 inline-block">&#8678; Back</Link>
       <div className="flex justify-center">
       <div className=" w-5/6 lg:flex lg:flex-row-reverse lg:justify-center border shadow-xl">

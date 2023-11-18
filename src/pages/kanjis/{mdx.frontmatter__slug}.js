@@ -8,7 +8,7 @@ const KanjiPost = ({ data }) => {
   const image = getImage(data.mdx.frontmatter.image)
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <Layout>
       <Link to="/kanjis" className="text-white rounded bg-pink-300 py-1 px-2 text-lg mb-2 inline-block">&#8678; Back</Link>
       <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center border shadow-lg py-4">
         <div className="flex flex-col p-6">
